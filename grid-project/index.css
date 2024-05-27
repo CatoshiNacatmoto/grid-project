@@ -183,7 +183,20 @@ html {
   }
 
   .close {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    height: 100vh;
+    right: -100%;
+    top: 0;
+    justify-content: center;
+    gap: 5rem;
+    animation: closeNav 1s;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+    padding-top: 15rem;
+    animation-fill-mode: forwards;
   }
 
   .open {
@@ -198,9 +211,10 @@ html {
     justify-content: center;
     gap: 5rem;
     animation: openNav 1s;
-    transform: translateX(100%);
+    transform: translateX(0%);
     padding-top: 15rem;
     animation-fill-mode: forwards;
+    transition: all 0.5s;
   }
 
   .navbar .hamburger {
@@ -226,15 +240,15 @@ html {
 }
 
 .animatebar1 {
-  animation: flipBar1 1s;
+  animation: flipBar1 0.5s;
   animation-fill-mode: forwards;
 }
 .animatebar2 {
-  animation: fadeBar2 1s;
+  animation: fadeBar2 0.5s;
   animation-fill-mode: forwards;
 }
 .animatebar3 {
-  animation: flipBar3 1s;
+  animation: flipBar3 0.5s;
   animation-fill-mode: forwards;
 }
 @keyframes flipBar1 {
@@ -263,14 +277,5 @@ html {
   to {
     translate: scaleX(0);
     opacity: 0;
-  }
-}
-
-@keyframes openNav {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0%);
   }
 }
